@@ -1,14 +1,14 @@
 ﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 		<PropertyGroup>
-			<ProjectGuid>{9F899BB1-5AA6-4D77-8E15-243DAD5A25D9}</ProjectGuid>
+			<ProjectGuid>{6A68AA41-F6FE-46A9-B48B-0B1B5DDA1408}</ProjectGuid>
 			<ProjectVersion>13.4</ProjectVersion>
-			<FrameworkType>VCL</FrameworkType>
-			<MainSource>Project2.dpr</MainSource>
+			<FrameworkType>None</FrameworkType>
 			<Base>True</Base>
 			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Platform Condition="'$(Platform)'==''">Win32</Platform>
 			<TargetedPlatforms>1</TargetedPlatforms>
-			<AppType>Application</AppType>
+			<AppType>Console</AppType>
+			<MainSource>Project2Tests.dpr</MainSource>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
 			<Base>true</Base>
@@ -40,10 +40,11 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UnitSearchPath>$(BDS)\Source\DUnit\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
 			<DCC_UsePackage>bindcompfmx;fmx;rtl;dbrtl;IndySystem;DbxClientDriver;bindcomp;inetdb;DBXInterBaseDriver;xmlrtl;DbxCommonDriver;IndyProtocols;DBXMySQLDriver;dbxcds;soaprtl;bindengine;CustomIPTransport;dsnap;fmxase;IndyCore;inet;fmxobj;inetdbxpress;fmxdae;IPIndyImpl;dbexpress;$(DCC_UsePackage)</DCC_UsePackage>
-			<Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
 			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-			<DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+			<DCC_Define>_CONSOLE_TESTRUNNER;$(DCC_Define)</DCC_Define>
+			<DCC_DcuOutput>.</DCC_DcuOutput>
 			<DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
 			<DCC_E>false</DCC_E>
 			<DCC_N>false</DCC_N>
@@ -56,10 +57,8 @@
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win32)'!=''">
 			<DCC_UsePackage>vcldbx;frx16;TeeDB;vclib;inetdbbde;Tee;svnui;ibxpress;vclimg;fmi;intrawebdb_120_160;frxDB16;fs16;vclactnband;FMXTee;TeeUI;vcldb;bindcompvcl;vcldsnap;vclie;vcltouch;Intraweb_120_160;websnap;vclribbon;VclSmp;frxe16;fsDB16;vcl;CloudService;CodeSiteExpressPkg;FmxTeeUI;dsnapcon;vclx;webdsnap;svn;bdertl;adortl;$(DCC_UsePackage)</DCC_UsePackage>
-			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1033</VerInfo_Locale>
-			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
 			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
@@ -82,20 +81,22 @@
 			<DelphiCompile Include="$(MainSource)">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
-			<DCCReference Include="Ui\Unit2.pas">
-				<Form>Form2</Form>
-				<FormType>dfm</FormType>
-			</DCCReference>
-			<DCCReference Include="Domain\UPayment.pas"/>
-			<DCCReference Include="Domain\UProductCatalog.pas"/>
-			<DCCReference Include="Domain\URegister.pas"/>
-			<DCCReference Include="Domain\UProductDescription.pas"/>
-			<DCCReference Include="Domain\USalesLineItem.pas"/>
-			<DCCReference Include="Domain\UStore.pas"/>
-			<DCCReference Include="Scr\UItemID.pas"/>
-			<DCCReference Include="Domain\USale.pas"/>
-			<DCCReference Include="Scr\UMoney.pas"/>
-			<DCCReference Include="Scr\UConnect.pas"/>
+			<DCCReference Include="TestUPayment.pas"/>
+			<DCCReference Include="..\Domain\UPayment.pas"/>
+			<DCCReference Include="..\Scr\UMoney.pas"/>
+			<DCCReference Include="TestUProductCatalog.pas"/>
+			<DCCReference Include="..\Domain\UProductCatalog.pas"/>
+			<DCCReference Include="..\Scr\UItemID.pas"/>
+			<DCCReference Include="TestURegister.pas"/>
+			<DCCReference Include="..\Domain\URegister.pas"/>
+			<DCCReference Include="..\Domain\USale.pas"/>
+			<DCCReference Include="..\Domain\USalesLineItem.pas"/>
+			<DCCReference Include="..\Domain\UProductDescription.pas"/>
+			<DCCReference Include="TestUProductDescription.pas"/>
+			<DCCReference Include="TestUSale.pas"/>
+			<DCCReference Include="TestUSalesLineItem.pas"/>
+			<DCCReference Include="TestUStore.pas"/>
+			<DCCReference Include="..\Domain\UStore.pas"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -141,16 +142,19 @@
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Source>
-						<Source Name="MainSource">Project2.dpr</Source>
+						<Source Name="MainSource">Project2Tests.dpr</Source>
 					</Source>
 				</Delphi.Personality>
 				<Deployment/>
 				<Platforms>
 					<Platform value="Win64">False</Platform>
+					<Platform value="OSX32">False</Platform>
 					<Platform value="Win32">True</Platform>
 				</Platforms>
 				<UnitTesting>
-					<TestProjectName>C:\Users\студ.AST\Documents\Оленников\NextGen backup\Test\Project2Tests.dproj</TestProjectName>
+					<TestFramework>DUnit / Delphi Win32</TestFramework>
+					<TestRunner>GUI</TestRunner>
+					<SourceProjectName>C:\Users\студ.AST\Documents\Оленников\NextGen backup\Project2.dproj</SourceProjectName>
 				</UnitTesting>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>
