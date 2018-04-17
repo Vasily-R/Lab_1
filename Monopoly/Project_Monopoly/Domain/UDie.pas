@@ -3,16 +3,17 @@ unit UDie;
 interface
 
 type
-  TDie=class
-const MAX=6;
-private
-  faceValue:Integer;
 
-public
-  procedure roll;
-  function getFaceValue:integer;
-published
-constructor create;
+  TDie = class
+  const
+    MAX = 6;
+  private
+    faceValue: integer;
+  public
+    procedure roll;
+    function getFaceValue: integer;
+  published
+    constructor create;
   end;
 
 implementation
@@ -24,14 +25,14 @@ begin
   roll;
 end;
 
-function TDie.getFaceValue:integer;
+function TDie.getFaceValue: integer;
 begin
-  result:=faceValue;
+  result := faceValue;
 end;
 
 procedure TDie.roll;
 begin
-  faceValue:=random(MAX)+1;
+  faceValue := random(MAX) + 1;
 end;
 
 end.

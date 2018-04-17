@@ -1,34 +1,38 @@
 unit UPiece;
 
 interface
-uses USquare;
+
+uses
+  USquare;
+
 type
-  TPiece=class
-private
-  location:TSquare;
-published
-  constructor create(location:TSquare);
-public
-  function getLocation:TSquare;
-  procedure setlocation(location:TSquare);
+  TPiece = class
+  private
+    location: TSquare;
+  published
+    constructor create(location: TSquare);
+  public
+    function getLocation: TSquare;
+    procedure setLocation(location: TSquare);
   end;
+
 implementation
 
 { TPiece }
 
-constructor TPiece.create(location:TSquare);
+constructor TPiece.create(location: TSquare);
 begin
-  self.location:=location;
+  self.location := location;
 end;
 
 function TPiece.getLocation: TSquare;
 begin
-  result:=location;
+  result := location;
 end;
 
-procedure TPiece.setlocation(location: TSquare);
+procedure TPiece.setLocation(location: TSquare);
 begin
-  self.location:=location;
+  self.location := location;
 end;
 
 end.

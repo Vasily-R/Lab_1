@@ -1,49 +1,50 @@
 unit USquare;
 
 interface
+
 type
-  TSquare=class
-private
-  name:string;
-  nextSquare:TSquare;
-  index:integer;
-published constructor create(name:string;index:integer);
-public
-  procedure setNextSquare(s:Tsquare);
-  function getNetxSquare:Tsquare;
-  function getName:string;
-  function getIndex:integer;
-end;
+  TSquare = class
+  private
+    name: string;
+    nextSquare: TSquare;
+    index: integer;
+  public
+    procedure setNextSquare(s: TSquare);
+    function getnextSquare: TSquare;
+    function getName: string;
+    function getIndex: integer;
+  published
+    constructor create(name: string; index: integer);
+  end;
 
 implementation
 
-{ TSquare }
+{ TSquere }
 
 constructor TSquare.create(name: string; index: integer);
 begin
-  self.name:=name;
-  self.index:=index;
+  self.name := name;
+  self.index := index;
 end;
 
 function TSquare.getIndex: integer;
 begin
-  result:=index;
+  result := index;
 end;
 
 function TSquare.getName: string;
 begin
-  result:=name;
+  result := name;
 end;
 
-function TSquare.getNetxSquare: Tsquare;
+function TSquare.getnextSquare: TSquare;
 begin
-  result:=nextSquare;
+  result := nextSquare;
 end;
 
-procedure TSquare.setNextSquare(s: Tsquare);
+procedure TSquare.setNextSquare(s: TSquare);
 begin
-  nextSquare:=s;
+  nextSquare := s;
 end;
-
 
 end.

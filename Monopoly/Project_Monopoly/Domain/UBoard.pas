@@ -2,7 +2,9 @@ unit UBoard;
 
 interface
 
-uses SysUtils, Classes, Generics.Collections, Generics.Defaults, USquare;
+Uses
+  SysUtils, Classes, Generics.Collections, Generics.Defaults,
+  USquare;
 
 type
   TBoard = class
@@ -11,35 +13,17 @@ type
   private
     squares: TList<TSquare>;
     procedure build(i: integer);
-    procedure linksquares;
+    procedure linkSquares;
     procedure link(i: integer);
   public
     function getSquare(start: TSquare; distance: integer): TSquare;
     function getStartSquare: TSquare;
-    procedure buildsquares;
-
+    procedure buildSquares;
   published
     constructor create;
   end;
 
 implementation
-
-{ TBoard }
-
-procedure TBoard.buildsquares;
-var
-  i: integer;
-begin
-  squares := TList<TSquare>.create;
-  for i := 0 to SIZE - 1 do
-    build(i);
-end;
-
-constructor TBoard.create;
-begin
-  buildsquares;
-  linksquares;
-end;
 
 procedure TBoard.build(i: integer);
 var
@@ -47,6 +31,21 @@ var
 begin
   s := TSquare.create('Square ' + inttostr(i), i);
   squares.Add(s);
+end;
+
+procedure TBoard.buildSquares;
+var
+  i: integer;
+begin
+  squares := TList<TSquare>.create;
+  for i := 0 to SIZE-1 do
+    build(i);
+end;
+
+constructor TBoard.create;
+begin
+  buildSquares;
+  linkSquares;
 end;
 
 function TBoard.getSquare(start: TSquare; distance: integer): TSquare;
@@ -64,23 +63,23 @@ end;
 
 procedure TBoard.link(i: integer);
 var
-  current, next: TSquare;
+  next, current: TSquare;
 begin
   current := squares.Items[i];
-  next := squares.Items[i];  ///////////i+1
+  next := squares.Items[i];   // i + 1   ??? здесь не работает
   current.setNextSquare(next);
 end;
 
-procedure TBoard.linksquares;
+procedure TBoard.linkSquares;
 var
   i: integer;
-  First, last: TSquare;
+  first, last: TSquare;
 begin
   for i := 0 to (SIZE - 1) do
     link(i);
-  First := squares.First;
-  last := squares.last;
-  last.setNextSquare(First);
+  first := squares.First;
+  last := squares.Last;
+  last.setNextSquare(first);
 end;
 
 end.
