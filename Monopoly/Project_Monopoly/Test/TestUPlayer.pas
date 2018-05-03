@@ -21,7 +21,7 @@ type
   TestTPlayer = class(TTestCase)
   strict private
     FPlayer: TPlayer;
-    name: string; dice: TDie; board: TBoard;
+    name:string; dice:TDie; board:TBoard;
   public
     procedure SetUp; override;
     procedure TearDown; override;
@@ -31,7 +31,7 @@ implementation
 
 procedure TestTPlayer.SetUp;
 begin
-  FPlayer := TPlayer.Create(name, dice, board);
+  FPlayer := TPlayer.Create(name,dice,board);
 end;
 
 procedure TestTPlayer.TearDown;

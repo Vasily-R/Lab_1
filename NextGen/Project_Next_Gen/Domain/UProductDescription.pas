@@ -2,48 +2,55 @@ unit UProductDescription;
 
 interface
 
-uses
-  UMoney, UItemID;
+uses UItemId, UMoney;
 
 type
-  TProductDescription = class
+  IProductDescription = class
+    procedure ProductDescription(id: TItemID; price: TMoney;
+      description: string); virtual; abstract;
+    function getItemID: TItemID; virtual; abstract;
+    function getPrice: TMoney; virtual; abstract;
+    function getDescription: string; virtual; abstract;
+  end;
+
+  TProductDescription = class(IProductDescription)
   private
     id: TItemID;
     price: TMoney;
     description: string;
   public
     procedure ProductDescription(id: TItemID; price: TMoney;
-      description: string);
-    function getItemId: TItemID;
-    function getPrice: TMoney;
-    function getDescription: string;
+      description: string); override;
+    function getItemID: TItemID; override;
+    function getPrice: TMoney; override;
+    function getDescription: String; override;
   end;
 
 implementation
 
 { TProductDescription }
 
-function TProductDescription.getDescription: string;
+function TProductDescription.getDescription: String;
 begin
-  result := description;
+  result:=description;
 end;
 
-function TProductDescription.getItemId: TItemID;
+function TProductDescription.getItemID: TItemID;
 begin
-  result := id;
+  result:=id;
 end;
 
 function TProductDescription.getPrice: TMoney;
 begin
-  result := price;
+  result:=price;
 end;
 
-procedure TProductDescription.ProductDescription(id: TItemID; price: TMoney;
+procedure TProductDescription.ProductDescription(id: TItemId; price: TMoney;
   description: string);
 begin
-  self.id := id;
-  self.price := price;
-  self.description := description;
+  self.id:=id;
+  self.price:=price;
+  self.description:=description;
 end;
 
 end.

@@ -20,7 +20,7 @@ type
   TestTRegister = class(TTestCase)
   strict private
     FRegister: TRegister;
-    catalog: TProductCatalog;
+    catalog:TProductCatalog;
   public
     procedure SetUp; override;
     procedure TearDown; override;
@@ -30,9 +30,8 @@ implementation
 
 procedure TestTRegister.SetUp;
 begin
-  catalog := TProductCatalog.create;
+  catalog:=TProductCatalog.create;
   FRegister := TRegister.Create(catalog);
-
 end;
 
 procedure TestTRegister.TearDown;

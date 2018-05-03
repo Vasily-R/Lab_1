@@ -20,7 +20,7 @@ type
   TestTPiece = class(TTestCase)
   strict private
     FPiece: TPiece;
-    location: TSquare;
+    location:TSquare;
   public
     procedure SetUp; override;
     procedure TearDown; override;

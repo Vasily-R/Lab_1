@@ -2,16 +2,20 @@ unit UPayment;
 
 interface
 
-uses
-  UMoney;
+uses UMoney;
 
 type
-  TPayment = class
+  IPayment = class
+    procedure Payment(CashTendered: TMoney); virtual; abstract;
+    function getAmount: TMoney; virtual; abstract;
+  end;
+
+  TPayment = class(IPayment)
   private
     amount: TMoney;
   public
-    procedure Payment(CashTendered: TMoney);
-    function getAmount: TMoney;
+    procedure Payment(CashTendered: TMoney); override;
+    function getAmount: TMoney; override;
   end;
 
 implementation
@@ -20,12 +24,12 @@ implementation
 
 function TPayment.getAmount: TMoney;
 begin
-  result := amount;
+  result:=amount;
 end;
 
 procedure TPayment.Payment(CashTendered: TMoney);
 begin
-  amount := CashTendered;
+  amount:=CashTendered;
 end;
 
 end.

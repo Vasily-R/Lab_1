@@ -2,14 +2,18 @@ program Project1;
 
 uses
   Vcl.Forms,
-  Unit1 in 'ui\Unit1.pas' {Form1},
-  UPiece in 'domain\UPiece.pas',
-  UPlayer in 'domain\UPlayer.pas',
-  UBoard in 'domain\UBoard.pas',
-  UMGame in 'domain\UMGame.pas',
-  UDie in 'domain\UDie.pas',
-  USquare in 'domain\USquare.pas',
-  Unit2 in 'ui\Unit2.pas' {Form2};
+  Unit1 in 'UI\Unit1.pas' {Form1},
+  USquare in 'Domain\USquare.pas',
+  UPiece in 'Domain\UPiece.pas',
+  UDie in 'Domain\UDie.pas',
+  UBoard in 'Domain\UBoard.pas',
+  UPlayer in 'Domain\UPlayer.pas',
+  UMonopolyGame in 'Domain\UMonopolyGame.pas',
+  UPlayers in 'UI\UPlayers.pas' {Form2},
+  UCup in 'Domain\UCup.pas',
+  UIncomeTaxSquare in 'Polymorphism\UIncomeTaxSquare.pas',
+  URegularSquare in 'Polymorphism\URegularSquare.pas',
+  UGoSquare in 'Polymorphism\UGoSquare.pas';
 
 {$R *.res}
 
@@ -19,5 +23,4 @@ begin
   Application.CreateForm(TForm2, Form2);
   Application.CreateForm(TForm1, Form1);
   Application.Run;
-
 end.

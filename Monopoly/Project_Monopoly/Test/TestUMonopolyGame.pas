@@ -1,4 +1,4 @@
-unit TestUMGame;
+unit TestUMonopolyGame;
 {
 
   Delphi DUnit Test Case
@@ -12,15 +12,15 @@ unit TestUMGame;
 interface
 
 uses
-  TestFramework, UMGame, Generics.Defaults, Generics.Collections, UPlayer, UDie, Classes,
-  SysUtils, UBoard;
+  TestFramework, UMonopolyGame, Generics.Defaults, Generics.Collections, UPlayer, UDie,
+  Classes, SysUtils, UBoard;
 
 type
-  // Test methods for class TMGame
+  // Test methods for class TMonopolyGame
 
-  TestTMGame = class(TTestCase)
+  TestTMonopolyGame = class(TTestCase)
   strict private
-    FMGame: TMGame;
+    FMonopolyGame: TMonopolyGame;
   public
     procedure SetUp; override;
     procedure TearDown; override;
@@ -28,19 +28,19 @@ type
 
 implementation
 
-procedure TestTMGame.SetUp;
+procedure TestTMonopolyGame.SetUp;
 begin
-  FMGame := TMGame.Create;
+  FMonopolyGame := TMonopolyGame.Create;
 end;
 
-procedure TestTMGame.TearDown;
+procedure TestTMonopolyGame.TearDown;
 begin
-  FMGame.Free;
-  FMGame := nil;
+  FMonopolyGame.Free;
+  FMonopolyGame := nil;
 end;
 
 initialization
   // Register any test cases with the test runner
-  RegisterTest(TestTMGame.Suite);
+  RegisterTest(TestTMonopolyGame.Suite);
 end.
 

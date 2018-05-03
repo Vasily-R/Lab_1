@@ -2,35 +2,38 @@ unit USalesLineItem;
 
 interface
 
-uses
-  UProductDescription,
-  UMoney;
+uses UProductDescription, UMoney;
 
 type
-  TSalesLineItem = class
+  ISalesLineItem = class
+    procedure SalesLineItem(desc: TProductDescription; quantity: integer); virtual; abstract;
+    function getSubtotal: TMoney; virtual; abstract;
+  end;
+
+  TSalesLineItem = class(ISalesLineItem)
   private
     quantity: integer;
     description: TProductDescription;
-  published
   public
-    Procedure SalesLineItem(desc: TProductDescription; quantity: integer);
-    Function GetSubtotal: TMoney;
+    procedure SalesLineItem(desc: TProductDescription; quantity: integer); override;
+    function getSubtotal: TMoney; override;
   end;
 
 implementation
 
 { TSalesLineItem }
 
-function TSalesLineItem.GetSubtotal: TMoney;
+function TSalesLineItem.getSubtotal: TMoney;
 begin
-  result := description.getPrice() * quantity;
+  result:=description.getPrice*quantity;
+
 end;
 
 procedure TSalesLineItem.SalesLineItem(desc: TProductDescription;
   quantity: integer);
 begin
-  self.description := desc;
-  self.quantity := quantity;
+  self.description:=desc;
+  self.quantity:=quantity;
 end;
 
 end.

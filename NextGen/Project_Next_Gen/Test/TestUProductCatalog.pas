@@ -12,8 +12,8 @@ unit TestUProductCatalog;
 interface
 
 uses
-  TestFramework, Generics.defaults, UProductDescription, Generics.Collections,
-  SysUtils, UProductCatalog, UMoney, UItemID;
+  TestFramework, Generics.Defaults, UProductdescription, Generics.Collections,
+  sysUtils, UProductCatalog, UMoney, UItemID;
 
 type
   // Test methods for class TProductCatalog

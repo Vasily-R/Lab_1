@@ -12,7 +12,7 @@ unit TestUProductDescription;
 interface
 
 uses
-  TestFramework, UItemID, UProductDescription, UMoney;
+  TestFramework, UItemId, UProductDescription, UMoney;
 
 type
   // Test methods for class TProductDescription

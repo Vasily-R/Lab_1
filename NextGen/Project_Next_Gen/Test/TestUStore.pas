@@ -15,11 +15,11 @@ uses
   TestFramework, UStore, URegister, UProductCatalog;
 
 type
-  // Test methods for class TSore
+  // Test methods for class TStore
 
-  TestTSore = class(TTestCase)
+  TestTStore = class(TTestCase)
   strict private
-    FSore: TSore;
+    FStore: TStore;
   public
     procedure SetUp; override;
     procedure TearDown; override;
@@ -27,19 +27,19 @@ type
 
 implementation
 
-procedure TestTSore.SetUp;
+procedure TestTStore.SetUp;
 begin
-  FSore := TSore.Create;
+  FStore := TStore.Create;
 end;
 
-procedure TestTSore.TearDown;
+procedure TestTStore.TearDown;
 begin
-  FSore.Free;
-  FSore := nil;
+  FStore.Free;
+  FStore := nil;
 end;
 
 initialization
   // Register any test cases with the test runner
-  RegisterTest(TestTSore.Suite);
+  RegisterTest(TestTStore.Suite);
 end.
 

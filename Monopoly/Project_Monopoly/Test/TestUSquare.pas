@@ -30,7 +30,7 @@ implementation
 
 procedure TestTSquare.SetUp;
 begin
-  FSquare := TSquare.Create (name, index);
+  FSquare := TSquare.Create(name, index);
 end;
 
 procedure TestTSquare.TearDown;

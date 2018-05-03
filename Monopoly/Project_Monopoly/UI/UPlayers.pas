@@ -1,17 +1,18 @@
-unit Unit2;
+unit UPlayers;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, UMGame, Unit1;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UPlayer, Vcl.StdCtrls,UMonopolyGame;
 
 type
   TForm2 = class(TForm)
     Button1: TButton;
-    procedure Button1Click(Sender: TObject);
+     procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-  MGame: TMGame;
+    MonopolyGame:TmonopolyGame;
     { Private declarations }
   public
     { Public declarations }
@@ -24,10 +25,17 @@ implementation
 
 {$R *.dfm}
 
+uses Unit1;
+
+
 procedure TForm2.Button1Click(Sender: TObject);
 begin
-  MGame:= TMGame.create;
   Form1.Show;
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  MonopolyGame:=TMonopolyGame.Create;
 end;
 
 end.

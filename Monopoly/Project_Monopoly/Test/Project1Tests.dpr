@@ -17,17 +17,17 @@ program Project1Tests;
 uses
   DUnitTestRunner,
   TestUBoard in 'TestUBoard.pas',
-  UBoard in '..\domain\UBoard.pas',
+  UBoard in '..\Domain\UBoard.pas',
+  USquare in '..\Domain\USquare.pas',
   TestUDie in 'TestUDie.pas',
-  UDie in '..\domain\UDie.pas',
-  TestUMGame in 'TestUMGame.pas',
-  UMGame in '..\domain\UMGame.pas',
-  TestUPlayer in 'TestUPlayer.pas',
-  UPlayer in '..\domain\UPlayer.pas',
+  UDie in '..\Domain\UDie.pas',
+  TestUMonopolyGame in 'TestUMonopolyGame.pas',
+  UMonopolyGame in '..\Domain\UMonopolyGame.pas',
+  UPlayer in '..\Domain\UPlayer.pas',
+  UPiece in '..\Domain\UPiece.pas',
   TestUPiece in 'TestUPiece.pas',
-  UPiece in '..\domain\UPiece.pas',
-  TestUSquare in 'TestUSquare.pas',
-  USquare in '..\domain\USquare.pas';
+  TestUPlayer in 'TestUPlayer.pas',
+  TestUSquare in 'TestUSquare.pas';
 
 {R *.RES}
 

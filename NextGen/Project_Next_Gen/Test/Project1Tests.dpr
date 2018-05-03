@@ -1,4 +1,4 @@
-program Project2Tests;
+program Project1Tests;
 {
 
   Delphi DUnit Test Project
@@ -18,24 +18,24 @@ uses
   DUnitTestRunner,
   TestUPayment in 'TestUPayment.pas',
   UPayment in '..\Domain\UPayment.pas',
-  UMoney in '..\Scr\UMoney.pas',
+  UMoney in '..\src\UMoney.pas',
   TestUProductCatalog in 'TestUProductCatalog.pas',
   UProductCatalog in '..\Domain\UProductCatalog.pas',
-  UItemID in '..\Scr\UItemID.pas',
+  UProductDescription in '..\Domain\UProductDescription.pas',
+  UItemID in '..\src\UItemID.pas',
+  TestUProductDescription in 'TestUProductDescription.pas',
   TestURegister in 'TestURegister.pas',
   URegister in '..\Domain\URegister.pas',
   USale in '..\Domain\USale.pas',
   USalesLineItem in '..\Domain\USalesLineItem.pas',
-  UProductDescription in '..\Domain\UProductDescription.pas',
-  TestUProductDescription in 'TestUProductDescription.pas',
   TestUSale in 'TestUSale.pas',
   TestUSalesLineItem in 'TestUSalesLineItem.pas',
   TestUStore in 'TestUStore.pas',
   UStore in '..\Domain\UStore.pas';
 
-{ R *.RES }
+{R *.RES}
 
 begin
   DUnitTestRunner.RunRegisteredTests;
-
 end.
+

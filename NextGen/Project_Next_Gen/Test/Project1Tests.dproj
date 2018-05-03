@@ -1,6 +1,6 @@
 ﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 		<PropertyGroup>
-			<ProjectGuid>{6A68AA41-F6FE-46A9-B48B-0B1B5DDA1408}</ProjectGuid>
+			<ProjectGuid>{E60026A7-AE3E-4334-9E4D-273A1CEFE9EB}</ProjectGuid>
 			<ProjectVersion>13.4</ProjectVersion>
 			<FrameworkType>None</FrameworkType>
 			<Base>True</Base>
@@ -8,7 +8,7 @@
 			<Platform Condition="'$(Platform)'==''">Win32</Platform>
 			<TargetedPlatforms>1</TargetedPlatforms>
 			<AppType>Console</AppType>
-			<MainSource>Project2Tests.dpr</MainSource>
+			<MainSource>Project1Tests.dpr</MainSource>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
 			<Base>true</Base>
@@ -83,16 +83,16 @@
 			</DelphiCompile>
 			<DCCReference Include="TestUPayment.pas"/>
 			<DCCReference Include="..\Domain\UPayment.pas"/>
-			<DCCReference Include="..\Scr\UMoney.pas"/>
+			<DCCReference Include="..\src\UMoney.pas"/>
 			<DCCReference Include="TestUProductCatalog.pas"/>
 			<DCCReference Include="..\Domain\UProductCatalog.pas"/>
-			<DCCReference Include="..\Scr\UItemID.pas"/>
+			<DCCReference Include="..\Domain\UProductDescription.pas"/>
+			<DCCReference Include="..\src\UItemID.pas"/>
+			<DCCReference Include="TestUProductDescription.pas"/>
 			<DCCReference Include="TestURegister.pas"/>
 			<DCCReference Include="..\Domain\URegister.pas"/>
 			<DCCReference Include="..\Domain\USale.pas"/>
 			<DCCReference Include="..\Domain\USalesLineItem.pas"/>
-			<DCCReference Include="..\Domain\UProductDescription.pas"/>
-			<DCCReference Include="TestUProductDescription.pas"/>
 			<DCCReference Include="TestUSale.pas"/>
 			<DCCReference Include="TestUSalesLineItem.pas"/>
 			<DCCReference Include="TestUStore.pas"/>
@@ -142,7 +142,7 @@
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Source>
-						<Source Name="MainSource">Project2Tests.dpr</Source>
+						<Source Name="MainSource">Project1Tests.dpr</Source>
 					</Source>
 				</Delphi.Personality>
 				<Deployment/>
@@ -154,7 +154,8 @@
 				<UnitTesting>
 					<TestFramework>DUnit / Delphi Win32</TestFramework>
 					<TestRunner>GUI</TestRunner>
-					<SourceProjectName>C:\Users\студ.AST\Documents\Оленников\NextGen backup\Project2.dproj</SourceProjectName>
+					<SourceProjectName>O:\63-1\Технология разработки ПО\Лепший\Lab_1\NextGen\Project_NextGen\Project1.dproj</SourceProjectName>
+					<TestProjectName/>
 				</UnitTesting>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>

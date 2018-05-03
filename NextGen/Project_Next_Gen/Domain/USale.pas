@@ -2,83 +2,92 @@ unit USale;
 
 interface
 
-uses
-  UPayment, UMoney, USalesLineItem, UProductDescription, SysUtils,
-  Generics.Collections, Generics.Defaults;
+uses USalesLineItem, UPayment, UMoney,UProductDescription, SysUtils, Generics.Collections, Generics.Defaults;
 
 type
-  TSale = class
+  ISale = class
+    function getBalance: TMoney; virtual; abstract;
+    procedure becomeComplete; virtual; abstract;
+    function isComplete: boolean; virtual; abstract;
+    procedure makeLineItem(desc: TProductDescription; quantity: integer); virtual; abstract;
+    function getTotal: TMoney; virtual; abstract;
+    procedure makePayment(cashTendered: TMoney); virtual; abstract;
+  end;
+
+  TSale = class(ISale)
   private
-    lineitems: TList<TSalesLineItem>;
-    date: TDate;
-    Complite: boolean; // isComplite;
-    Payment: TPayment;
+    lineitems: Tlist<TSalesLineItem>;
+    data: TDate;
+    Complete: boolean;
+    payment: TPayment;
   published
     constructor create;
   public
-    function getBalace: TMoney;
-    procedure becomeComplete;
-    function isComplite: boolean;
-    procedure makeLineItem(desc: TProductDescription; quantity: integer);
-    function getTotal: TMoney;
-    procedure makePayment(cachTendered: TMoney);
+    function getBalance: TMoney; override;
+    procedure becomeComplete; override;
+    function isComplete: boolean; override;
+    procedure makeLineItem(desc: TProductDescription; quantity: integer); override;
+    function getTotal: TMoney; override;
+    procedure makePayment(cashTendered: TMoney); override;
   end;
 
 implementation
+
+uses UItaxCalculatorAdapter;
 
 { TSale }
 
 procedure TSale.becomeComplete;
 begin
-  Complite := true;
+  Complete:=true;
 end;
 
 constructor TSale.create;
 begin
-  lineitems := TList<TSalesLineItem>.create;
-  Complite := false;
-  Payment := TPayment.create;
+  lineitems:=Tlist<TSalesLineItem>.create;
+  Complete:=false;
+  Payment:=TPayment.Create;
 end;
 
-function TSale.getBalace: TMoney;
+function TSale.getBalance: TMoney;
 begin
-  result := Payment.getAmount - getTotal;
+  result:=Payment.getAmount - getTotal;
 end;
 
-function TSale.getTotal: TMoney;
+function TSale.getTotal: Tmoney;
 var
-  total, subTotal: TMoney;
-  SalesLineItem: TSalesLineItem;
+  total,subTotal:Tmoney;
+  iTax:TITaxCalculatorAdapter;
+  SalesLIneItem:TSalesLineItem;
 begin
-  total := 0;
-  subTotal := 0;
-  for SalesLineItem in lineitems do
-  begin
-    subTotal := SalesLineItem.GetSubtotal;
-    total := total + subTotal;
+  total:=0;
+  subTotal:=0;
+  for SalesLineItem in lineitems do begin
+    subTotal:=SalesLineItem.getSubTotal;
+    total:=total + subtotal;
   end;
-  result := total;
+  result:=total;//-iTax.getTaxes()
 end;
 
-function TSale.isComplite: boolean;
+function TSale.isComplete: boolean;
 begin
-  result := Complite;
+  result:=complete;
 end;
 
 procedure TSale.makeLineItem(desc: TProductDescription; quantity: integer);
 var
-  SalesLineItem: TSalesLineItem;
-  i: integer;
+  saleslineitem:TSalesLineItem;
+  i:integer;
 begin
-  SalesLineItem := TSalesLineItem.create;
-  SalesLineItem.SalesLineItem(desc, quantity);
-  i := lineitems.Add(SalesLineItem);
+  saleslineitem:=TSalesLineItem.create;
+  saleslineitem.saleslineitem(desc,quantity);
+  i:=lineitems.Add(saleslineitem);
 end;
 
-procedure TSale.makePayment(cachTendered: TMoney);
+procedure TSale.makePayment(cashTendered:TMoney);
 begin
-  Payment := TPayment.create;
-  Payment.Payment(cachTendered);
+  payment:=TPayment.Create;
+  payment.payment(cashTendered);
 end;
 
 end.

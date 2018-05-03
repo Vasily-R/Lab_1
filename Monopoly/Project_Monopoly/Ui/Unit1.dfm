@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 753
+  ClientHeight = 651
   ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,328 +11,342 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesigned
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel3: TPanel
+  object Label1: TLabel
+    Left = 232
+    Top = 283
+    Width = 36
+    Height = 13
+    Caption = 'Player1'
+  end
+  object Label2: TLabel
+    Left = 232
+    Top = 350
+    Width = 39
+    Height = 13
+    Caption = 'Player 2'
+  end
+  object Square3: TPanel
     Left = 450
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel3'
+    Caption = 'Square3'
     TabOrder = 0
   end
-  object Panel1: TPanel
+  object Square1: TPanel
     Left = 550
     Top = 550
     Width = 100
     Height = 100
-    Caption = 'Panel1'
+    Caption = 'Square1'
     TabOrder = 1
   end
-  object Panel2: TPanel
+  object Square2: TPanel
     Left = 500
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel2'
+    Caption = 'Square2'
     TabOrder = 2
   end
-  object Panel4: TPanel
+  object Square4: TPanel
     Left = 400
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel4'
+    Caption = 'Square4'
     TabOrder = 3
   end
-  object Panel5: TPanel
+  object Square5: TPanel
     Left = 350
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel5'
+    Caption = 'Square5'
     TabOrder = 4
   end
-  object Panel6: TPanel
+  object Square6: TPanel
     Left = 300
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel6'
+    Caption = 'Square6'
     TabOrder = 5
   end
-  object Panel7: TPanel
+  object Square7: TPanel
     Left = 250
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel7'
+    Caption = 'Square7'
     TabOrder = 6
   end
-  object Panel8: TPanel
+  object Square8: TPanel
     Left = 200
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel8'
+    Caption = 'Square8'
     TabOrder = 7
   end
-  object Panel9: TPanel
+  object Square9: TPanel
     Left = 150
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel9'
+    Caption = 'Square9'
     TabOrder = 8
   end
-  object Panel10: TPanel
+  object Square10: TPanel
     Left = 100
     Top = 550
     Width = 50
     Height = 100
-    Caption = 'Panel10'
+    Caption = 'Square10'
     TabOrder = 9
   end
-  object Panel11: TPanel
+  object Square11: TPanel
     Left = 0
     Top = 550
     Width = 100
     Height = 100
-    Caption = 'Pane11'
+    Caption = 'Square11'
     TabOrder = 10
   end
-  object Panel12: TPanel
+  object Square12: TPanel
     Left = 0
     Top = 500
     Width = 100
     Height = 50
-    Caption = 'Pane12'
+    Caption = 'Square12'
     TabOrder = 11
   end
-  object Panel13: TPanel
+  object Square13: TPanel
     Left = 0
     Top = 450
     Width = 100
     Height = 50
-    Caption = 'Pane13'
+    Caption = 'Square13'
     TabOrder = 12
   end
-  object Panel14: TPanel
+  object Square14: TPanel
     Left = 0
     Top = 400
     Width = 100
     Height = 50
-    Caption = 'Pane14'
+    Caption = 'Square14'
     TabOrder = 13
   end
-  object Panel15: TPanel
+  object Square15: TPanel
     Left = 0
     Top = 350
     Width = 100
     Height = 50
-    Caption = 'Pane15'
+    Caption = 'Square15'
     TabOrder = 14
   end
-  object Panel16: TPanel
+  object Square16: TPanel
     Left = 0
     Top = 300
     Width = 100
     Height = 50
-    Caption = 'Pane16'
+    Caption = 'Square16'
     TabOrder = 15
   end
-  object Panel17: TPanel
+  object Square17: TPanel
     Left = 0
     Top = 250
     Width = 100
     Height = 50
-    Caption = 'Pane17'
+    Caption = 'Square17'
     TabOrder = 16
   end
-  object Panel18: TPanel
+  object Square18: TPanel
     Left = 0
     Top = 200
     Width = 100
     Height = 50
-    Caption = 'Pane18'
+    Caption = 'Square18'
     TabOrder = 17
   end
-  object Panel19: TPanel
+  object Square19: TPanel
     Left = 0
     Top = 150
     Width = 100
     Height = 50
-    Caption = 'Pane19'
+    Caption = 'Square19'
     TabOrder = 18
   end
-  object Panel20: TPanel
+  object Square20: TPanel
     Left = 0
     Top = 100
     Width = 100
     Height = 50
-    Caption = 'Pane20'
+    Caption = 'Square20'
     TabOrder = 19
   end
-  object Panel21: TPanel
+  object Square21: TPanel
     Left = 0
     Top = 0
     Width = 100
     Height = 100
-    Caption = 'Pane21'
+    Caption = 'Square21'
     TabOrder = 20
   end
-  object Panel22: TPanel
+  object Square22: TPanel
     Left = 100
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel22'
+    Caption = 'Square22'
+    ParentBackground = False
     TabOrder = 21
   end
-  object Panel23: TPanel
+  object Square23: TPanel
     Left = 150
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel23'
+    Caption = 'Square23'
     TabOrder = 22
   end
-  object Panel24: TPanel
+  object Square24: TPanel
     Left = 200
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel24'
+    Caption = 'Square24'
     TabOrder = 23
   end
-  object Panel25: TPanel
+  object Square25: TPanel
     Left = 250
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel25'
+    Caption = 'Square25'
     TabOrder = 24
   end
-  object Panel26: TPanel
+  object Square26: TPanel
     Left = 300
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel26'
+    Caption = 'Square26'
     TabOrder = 25
   end
-  object Panel27: TPanel
+  object Square27: TPanel
     Left = 350
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel27'
+    Caption = 'Square27'
     TabOrder = 26
   end
-  object Panel28: TPanel
+  object Square28: TPanel
     Left = 400
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel28'
+    Caption = 'Square28'
     TabOrder = 27
   end
-  object Panel29: TPanel
+  object Square29: TPanel
     Left = 450
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel29'
+    Caption = 'Square29'
     TabOrder = 28
   end
-  object Panel30: TPanel
+  object Square30: TPanel
     Left = 500
     Top = 0
     Width = 50
     Height = 100
-    Caption = 'Panel30'
+    Caption = 'Square30'
     TabOrder = 29
   end
-  object Panel31: TPanel
+  object Square31: TPanel
     Left = 550
     Top = 0
     Width = 100
     Height = 100
-    Caption = 'Panel31'
+    Caption = 'Square31'
     TabOrder = 30
   end
-  object Panel33: TPanel
+  object Square33: TPanel
     Left = 550
     Top = 150
     Width = 100
     Height = 50
-    Caption = 'Pane33'
+    Caption = 'Square33'
     TabOrder = 31
   end
-  object Panel34: TPanel
+  object Square34: TPanel
     Left = 550
     Top = 200
     Width = 100
     Height = 50
-    Caption = 'Pane34'
+    Caption = 'Square34'
     TabOrder = 32
   end
-  object Panel35: TPanel
+  object Square35: TPanel
     Left = 550
     Top = 250
     Width = 100
     Height = 50
-    Caption = 'Pane35'
+    Caption = 'Square35'
     TabOrder = 33
   end
-  object Panel36: TPanel
+  object Square36: TPanel
     Left = 550
     Top = 300
     Width = 100
     Height = 50
-    Caption = 'Pane36'
+    Caption = 'Square36'
     TabOrder = 34
   end
-  object Panel37: TPanel
+  object Square37: TPanel
     Left = 550
     Top = 350
     Width = 100
     Height = 50
-    Caption = 'Pane37'
+    Caption = 'Square37'
     TabOrder = 35
   end
-  object Panel38: TPanel
+  object Square38: TPanel
     Left = 550
     Top = 400
     Width = 100
     Height = 50
-    Caption = 'Pane38'
+    Caption = 'Square38'
     TabOrder = 36
   end
-  object Panel39: TPanel
+  object Square39: TPanel
     Left = 550
     Top = 450
     Width = 100
     Height = 50
-    Caption = 'Pane39'
+    Caption = 'Square39'
     TabOrder = 37
   end
-  object Panel40: TPanel
+  object Square40: TPanel
     Left = 550
     Top = 500
     Width = 100
     Height = 50
-    Caption = 'Pane40'
+    Caption = 'Square40'
     TabOrder = 38
   end
-  object Panel32: TPanel
+  object Square32: TPanel
     Left = 550
     Top = 100
     Width = 100
     Height = 50
-    Caption = 'Panel32'
+    Caption = 'Square32'
     TabOrder = 39
   end
   object Button1: TButton

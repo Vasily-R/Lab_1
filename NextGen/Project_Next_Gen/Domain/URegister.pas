@@ -2,20 +2,26 @@ unit URegister;
 
 interface
 
-uses UProductCatalog, USale, UItemID, UProductDescription, UMoney;
-
+uses UProductCatalog,USale,UItemID,UProductDescription,UMoney;
 type
-  TRegister = class
+  IRegister = class
+    procedure endsale; virtual; abstract;
+    procedure enteritem(id: TItemID; quantity: integer); virtual; abstract;
+    procedure makenewsale; virtual; abstract;
+    procedure makepayment(cashtendered: TMoney); virtual; abstract;
+  end;
+
+  TRegister = class(IRegister)
   private
     catalog: TProductCatalog;
     currentSale: TSale;
   published
     constructor create(catalog: TProductCatalog);
   public
-    procedure endSale;
-    procedure enterItem(id: TItemID; quantity: integer);
-    procedure makeNewSale;
-    procedure makePayment(cachTendered: TMoney);
+    procedure endsale; override;
+    procedure enteritem(id: TItemID; quantity: integer); override;
+    procedure makenewsale; override;
+    procedure makepayment(cashtendered: TMoney); override;
   end;
 
 implementation
@@ -24,31 +30,31 @@ implementation
 
 constructor TRegister.create(catalog: TProductCatalog);
 begin
-  self.catalog := catalog;
+  self.catalog:=catalog;
 end;
 
-procedure TRegister.endSale;
+procedure TRegister.endsale;
 begin
   currentSale.becomeComplete;
 end;
 
-procedure TRegister.enterItem(id: TItemID; quantity: integer);
+procedure TRegister.enteritem(id: TItemID; quantity: integer);
 var
-  desc: TProductDescription;
+  desc:TProductDescription;
 begin
-  desc := TProductDescription.Create;
-  desc := catalog.getProductDescription(id);
-  currentSale.makeLineItem(desc, quantity);
+  desc:=TProductDescription.Create;
+  desc:=Catalog.getProductDescription(id);
+  CurrentSale.makelineitem(desc,quantity);
 end;
 
-procedure TRegister.makeNewSale;
+procedure TRegister.makenewsale;
 begin
-  currentSale := TSale.create;
+  currentSale:=Tsale.create;
 end;
 
-procedure TRegister.makePayment(cachTendered: TMoney);
+procedure TRegister.makepayment(cashtendered: TMoney);
 begin
-  currentSale.makePayment(cachTendered);
+  currentSale.makePayment(cashTendered);
 end;
 
 end.

@@ -1,8 +1,8 @@
 ﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 		<PropertyGroup>
-			<ProjectGuid>{BAB7A78A-CF1C-4B5A-AD6D-0AF6D7C7B9BB}</ProjectGuid>
+			<ProjectGuid>{319A2A5C-E85B-4825-B067-F64A48C64997}</ProjectGuid>
 			<ProjectVersion>13.4</ProjectVersion>
-			<FrameworkType>None</FrameworkType>
+			<FrameworkType>VCL</FrameworkType>
 			<Base>True</Base>
 			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -82,17 +82,17 @@
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
 			<DCCReference Include="TestUBoard.pas"/>
-			<DCCReference Include="..\domain\UBoard.pas"/>
+			<DCCReference Include="..\Domain\UBoard.pas"/>
+			<DCCReference Include="..\Domain\USquare.pas"/>
 			<DCCReference Include="TestUDie.pas"/>
-			<DCCReference Include="..\domain\UDie.pas"/>
-			<DCCReference Include="TestUMGame.pas"/>
-			<DCCReference Include="..\domain\UMGame.pas"/>
-			<DCCReference Include="TestUPlayer.pas"/>
-			<DCCReference Include="..\domain\UPlayer.pas"/>
+			<DCCReference Include="..\Domain\UDie.pas"/>
+			<DCCReference Include="TestUMonopolyGame.pas"/>
+			<DCCReference Include="..\Domain\UMonopolyGame.pas"/>
+			<DCCReference Include="..\Domain\UPlayer.pas"/>
+			<DCCReference Include="..\Domain\UPiece.pas"/>
 			<DCCReference Include="TestUPiece.pas"/>
-			<DCCReference Include="..\domain\UPiece.pas"/>
+			<DCCReference Include="TestUPlayer.pas"/>
 			<DCCReference Include="TestUSquare.pas"/>
-			<DCCReference Include="..\domain\USquare.pas"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -150,7 +150,8 @@
 				<UnitTesting>
 					<TestFramework>DUnit / Delphi Win32</TestFramework>
 					<TestRunner>GUI</TestRunner>
-					<SourceProjectName>E:\Технология разработки программного обеспечения\Новое\Monopoly-master\Project1.dproj</SourceProjectName>
+					<SourceProjectName>C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Project1.dproj</SourceProjectName>
+					<TestProjectName/>
 				</UnitTesting>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>

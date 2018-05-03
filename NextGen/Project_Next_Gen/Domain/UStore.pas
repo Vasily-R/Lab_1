@@ -2,33 +2,36 @@ unit UStore;
 
 interface
 
-uses
-  UProductCatalog, URegister;
+uses UProductCatalog, URegister;
 
 type
-  TSore = class
+  IStore = class
+    function getregister: TRegister; virtual; abstract;
+  end;
+
+  TStore = class(IStore)
   private
-    catalog: TProductCatalog;
+    Catalog: TProductCatalog;
     register1: TRegister;
   published
     constructor create;
   public
-    function getRegister: TRegister;
+    function getregister: TRegister; override;
   end;
 
 implementation
 
-{ TSore }
+{ TStore }
 
-constructor TSore.create;
+constructor TStore.create;
 begin
-  catalog := TProductCatalog.create;
-  register1 := TRegister.create(catalog);
+  catalog:=TProductCatalog.create;
+  register1:=TRegister.create(catalog);
 end;
 
-function TSore.getRegister: TRegister;
+function TStore.getregister: TRegister;
 begin
-  result := register1;
+  result:=register1;
 end;
 
 end.

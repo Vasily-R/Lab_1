@@ -2,63 +2,60 @@ unit UPlayer;
 
 interface
 
-uses
-  SysUtils, Classes, Generics.Collections, Generics.Defaults,
-  UPiece, UBoard, UDie, USquare;
+uses SysUtils, Classes, Generics.Collections, Generics.Defaults, UPiece, UBoard, UDie, USquare;
 
 type
   TPlayer = class
   private
-    name: string;
-    piece: TPiece;
-    board: TBoard;
-    dice: TList<TDie>;
-  published
-    constructor create(name: string; dice: TDie; board: TBoard);
+    name:string;
+    piece:TPiece;
+    board:TBoard;
+    dice:TList<TDie>;
   public
     procedure takeTurn;
-    function GetLocation: TSquare;
-    function getName: string;
+    function getLocation:TSquare;
+    function getName:string;
+  published
+    constructor Create(name:string; dice:TDie; board:TBoard);
   end;
 
 implementation
 
+uses Unit1;
+
 { TPlayer }
 
-constructor TPlayer.create(name: string; dice: TDie; board: TBoard);
+constructor TPlayer.Create(name: string; dice: TDie; board: TBoard);
 begin
-  self.name := name;
-  //self.dice := dice;
+  self.name:=name;
   self.dice := TList<TDie>.create;
   self.dice.Add(dice);
-  self.dice.Add(dice);
-  self.board := board;
-  piece := TPiece.create(board.getStartSquare);
+  //self.dice.Add(dice);
+  self.board:=board;
+  piece:=TPiece.create(board.getStartSquare);
 end;
 
-function TPlayer.GetLocation: TSquare;
+function TPlayer.getLocation: TSquare;
 begin
-  result := piece.GetLocation;
+  result:=piece.getLocation;
 end;
 
 function TPlayer.getName: string;
 begin
-  result := name;
+  result:=name;
 end;
 
 procedure TPlayer.takeTurn;
 var
-  rollTotal, i: integer;
-  newLoc: TSquare;
+  rollTotal,i:integer;
+  newLoc:TSquare;
 begin
-  // бросание кубиков
-  rollTotal := 0;
-  for i := 0 to dice.Count-1 do
-  begin // length = 2
+  rollTotal:=0;
+  for i:=0 to dice.Count-1 do begin
     dice.Items[i].roll;
-    rollTotal := rollTotal + self.dice.Items[i].getFaceValue;
+    rollTotal:=rollTotal+self.dice.Items[i].getFaceValue;
   end;
-  newLoc := board.getSquare(piece.GetLocation, rollTotal);
+  newLoc:=board.getSquare(piece.getLocation, rollTotal);
   piece.setLocation(newLoc);
 end;
 

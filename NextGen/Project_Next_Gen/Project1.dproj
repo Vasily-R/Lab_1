@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{5B28D7FD-876B-454B-9F9C-86E860BB3E4F}</ProjectGuid>
+        <ProjectGuid>{2492E9A1-7C44-43AE-BC31-D70475EDA79D}</ProjectGuid>
         <ProjectVersion>14.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <MainSource>Project1.dpr</MainSource>
@@ -40,7 +40,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <DCC_UsePackage>bindcompfmx;fmx;dsnap;rtl;dbrtl;bindcomp;FmxTeeUI;inet;xmlrtl;FMXTee;bindengine;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>bindcompfmx;fmx;rtl;dbrtl;IndySystem;DbxClientDriver;bindcomp;inetdb;DBXInterBaseDriver;xmlrtl;DbxCommonDriver;IndyProtocols;DBXMySQLDriver;dbxcds;soaprtl;bindengine;CustomIPTransport;dsnap;fmxase;IndyCore;inet;fmxobj;inetdbxpress;fmxdae;IPIndyImpl;dbexpress;$(DCC_UsePackage)</DCC_UsePackage>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
@@ -52,7 +52,7 @@
         <DCC_K>false</DCC_K>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>bindcompvcl;vcltouch;Intraweb_120_160;vcldbx;VclSmp;IndyCore;vcl;TeeDB;IndySystem;Tee;dsnapcon;vclx;svnui;svn;vclimg;IndyProtocols;intrawebdb_120_160;bdertl;vclactnband;vcldb;TeeUI;vcldsnap;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vcldbx;frx16;TeeDB;vclib;inetdbbde;Tee;svnui;ibxpress;vclimg;fmi;intrawebdb_120_160;frxDB16;fs16;vclactnband;FMXTee;TeeUI;vcldb;bindcompvcl;vcldsnap;vclie;vcltouch;Intraweb_120_160;websnap;vclribbon;VclSmp;frxe16;fsDB16;vcl;CloudService;CodeSiteExpressPkg;FmxTeeUI;dsnapcon;vclx;webdsnap;svn;bdertl;adortl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -60,7 +60,7 @@
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>bindcompvcl;vcltouch;VclSmp;vcl;dsnapcon;vclx;vclimg;vclactnband;vcldb;vcldsnap;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vclimg;vclactnband;vcldb;bindcompvcl;vcldsnap;vclie;vcltouch;websnap;VclSmp;vcl;dsnapcon;vclx;webdsnap;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -86,20 +86,24 @@
             <Form>Form1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Domain\USquare.pas"/>
-        <DCCReference Include="Domain\UPiece.pas"/>
-        <DCCReference Include="Domain\UDie.pas"/>
-        <DCCReference Include="Domain\UBoard.pas"/>
-        <DCCReference Include="Domain\UPlayer.pas"/>
-        <DCCReference Include="Domain\UMonopolyGame.pas"/>
-        <DCCReference Include="UI\UPlayers.pas">
-            <Form>Form2</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Domain\UCup.pas"/>
-        <DCCReference Include="Polymorphism\UIncomeTaxSquare.pas"/>
-        <DCCReference Include="Polymorphism\URegularSquare.pas"/>
-        <DCCReference Include="Polymorphism\UGoSquare.pas"/>
+        <DCCReference Include="Domain\UPayment.pas"/>
+        <DCCReference Include="Domain\UProductCatalog.pas"/>
+        <DCCReference Include="src\UMoney.pas"/>
+        <DCCReference Include="Domain\URegister.pas"/>
+        <DCCReference Include="Domain\UProductDescription.pas"/>
+        <DCCReference Include="Domain\USale.pas"/>
+        <DCCReference Include="Domain\USalesLineItem.pas"/>
+        <DCCReference Include="Domain\UStore.pas"/>
+        <DCCReference Include="src\UAddress.pas"/>
+        <DCCReference Include="src\UItemID.pas"/>
+        <DCCReference Include="src\UConnect.pas"/>
+        <DCCReference Include="Domain\UTaxLineItem.pas"/>
+        <DCCReference Include="Polymorphism\UGoodAsGoldTaxProAdapter.pas"/>
+        <DCCReference Include="Polymorphism\UItaxCalculatorAdapter.pas"/>
+        <DCCReference Include="Polymorphism\UTaxMasterAdapter.pas"/>
+        <DCCReference Include="Strategy\UAbsoluteDiscountPricingStrategy.pas"/>
+        <DCCReference Include="Strategy\UPercentDiscountPricingStrategy.pas"/>
+        <DCCReference Include="Strategy\UISalePricingStrategy.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -154,7 +158,7 @@
                 <Platform value="Win64">False</Platform>
             </Platforms>
             <UnitTesting>
-                <TestProjectName>C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Test\Project1Tests.dproj</TestProjectName>
+                <TestProjectName>O:\63-1\Технология разработки ПО\Лепший\Lab_1\NextGen\Project_NextGen\Test\Project1Tests.dproj</TestProjectName>
             </UnitTesting>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
