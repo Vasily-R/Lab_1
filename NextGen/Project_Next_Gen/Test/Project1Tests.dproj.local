@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.612,=O:\63-1\Технология разработки ПО\Лепший\Lab_1\NextGen\Project_NextGen\Domain\UPayment.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.944,=O:\63-1\Технология разработки ПО\Лепший\Lab_1\NextGen\Project_NextGen\Test\TestUPayment.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.470,=O:\63-1\Технология разработки ПО\Лепший\Lab_1\NextGen\Project_NextGen\src\UMoney.pas</Transaction>
+    <Transaction>2018.04.04 09:30:36.220,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Test\TestUProductCatalog.pas</Transaction>
+    <Transaction>2018.04.04 09:30:36.558,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Domain\UProductCatalog.pas</Transaction>
+    <Transaction>2018.04.04 09:30:54.304,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Domain\UProductDescription.pas</Transaction>
+    <Transaction>2018.04.04 09:31:12.114,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\src\UItemID.pas</Transaction>
+    <Transaction>2018.04.04 09:31:54.471,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Test\TestUProductDescription.pas</Transaction>
+    <Transaction>2018.04.04 09:32:46.221,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Test\TestURegister.pas</Transaction>
+    <Transaction>2018.04.04 09:32:46.498,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Domain\URegister.pas</Transaction>
+    <Transaction>2018.04.04 09:34:03.179,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Domain\USale.pas</Transaction>
+    <Transaction>2018.04.04 09:34:13.608,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Domain\USalesLineItem.pas</Transaction>
+    <Transaction>2018.04.04 09:43:16.111,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Test\TestUSale.pas</Transaction>
+    <Transaction>2018.04.04 09:43:55.770,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Test\TestUSalesLineItem.pas</Transaction>
+    <Transaction>2018.04.04 09:44:22.058,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Test\TestUStore.pas</Transaction>
+    <Transaction>2018.04.04 09:44:22.209,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\NextGen\Project_NextGen\Domain\UStore.pas</Transaction>
+  </Transactions>
+</BorlandProject>

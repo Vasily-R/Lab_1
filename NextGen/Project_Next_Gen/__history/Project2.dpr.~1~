@@ -1,0 +1,23 @@
+program Project2;
+
+uses
+  Vcl.Forms,
+  Unit2 in '..\Непейвода\ui\Unit2.pas' {Form2},
+  UPayment in 'Domain\UPayment.pas',
+  UMoney in '..\Непейвода\src\UMoney.pas',
+  UProductCatalog in '..\Непейвода\domain\UProductCatalog.pas',
+  URegister in '..\Непейвода\domain\URegister.pas',
+  UProductDescription in '..\Непейвода\domain\UProductDescription.pas',
+  USale in '..\Непейвода\USale.pas',
+  USalesLineItem in '..\Непейвода\domain\USalesLineItem.pas',
+  UStore in '..\Непейвода\domain\UStore.pas',
+  UItemID in '..\Непейвода\src\UItemID.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.Run;
+end.
