@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.810,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Domain\UDie.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.171,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Domain\USquare.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.663,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Test\TestUDie.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.751,=D:\Учёба\Технология разработки программного обеспечения\Лабораторные\Lab_1\Monopoly\Project_Monopoly\Test\TestUSquare.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.240,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Domain\UMonopolyGame.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.881,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Test\TestUPiece.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.522,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Test\TestUBoard.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.337,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Domain\UPlayer.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.254,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Domain\UBoard.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.490,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Test\TestUPlayer.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.071,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Test\TestUMonopolyGame.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.963,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Test\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.449,=C:\Users\студ.K201-06\Documents\Лепший\Lab_1\Monopoly\Project_Monopoly\Domain\UPiece.pas</Transaction>
+  </Transactions>
+</BorlandProject>
